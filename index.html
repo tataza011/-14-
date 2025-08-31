@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ครบรอบ 💖</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="background-music" src="0830.MP3" autoplay loop></audio>
+
+    <div id="page0" class="page active">
+        <div class="container-page0">
+            <div class="image-section-page0">
+                <img src="my_face.webp" alt="น้องกระต่ายน่ารัก">
+            </div>
+            <div class="text-section-page0">
+                <h1>วันนี้วันอะไรค้าบบ</h1>
+                <button onclick="goToPasswordPage()">วันครบรอบ 14 เดือนของเรา</button>
+                <button onclick="changeMessage('วันอังคาร')">วันอังคาร</button>
+                <button onclick="changeMessage('วันที่รักต้าที่สุด')">วันที่รักต้าที่สุด</button>
+                <p id="result" class="result-text"></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-incorrect" class="page">
+        <div class="incorrect-content">
+            <div class="incorrect-image-box">
+                <img src="flaming_roach.gif" alt="น้องหมีอารมณ์บูด">
+            </div>
+            <div class="incorrect-text-box">
+                <p class="incorrect-message">ไม่ใช่ ไม่ใช่ ไปตอบใหม่😠</p>
+                <button class="back-btn" onclick="goBackToQuestion()">กลับไปตอบใหม่</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-correct" class="page">
+        <div class="correct-content">
+            <img src="adorable-romantic.gif" alt="หัวใจรัก">
+            <p class="correct-message">ต้าก็รักเฟิร์สเหมือนกันนน</p>
+            <button class="next-btn" onclick="goToPasswordPage()">ไปกันต่ออ</button>
+        </div>
+    </div>
+
+    <div id="page1" class="page">
+        <div class="content-wrapper-page1">
+            <div class="photo-grid">
+                <img src="รูป1.JPG" alt="รูปคู่ 1">
+                <img src="รูป2.JPG" alt="รูปคู่ 2">
+                <img src="รูป3.PNG" alt="รูปคู่ 3">
+                <img src="รูป4.JPG" alt="รูปคู่ 4">
+                <img src="รูป5.JPG" alt="รูปคู่ 5">
+                <img src="รูป6.JPG" alt="รูปคู่ 6">
+            </div>
+            <div class="password-section">
+                <p class="password-prompt">ใส่รหัสผ่าน<br><span class="password-hint">(วันที่ต้าขอเฟิร์สเป็นแฟน)</span></p>
+                <div id="password-display"></div>
+                <div class="keypad">
+                    <button>1</button>
+                    <button>2</button>
+                    <button>3</button>
+                    <button>4</button>
+                    <button>5</button>
+                    <button>6</button>
+                    <button>7</button>
+                    <button>8</button>
+                    <button>9</button>
+                    <button class="keypad-special backspace-btn">←</button>
+                    <button>0</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="page-incorrect-password" class="page">
+        <div class="password-incorrect-content">
+            <img src="เศร้า.gif" alt="รูปหมีงงๆ">
+            <p class="incorrect-password-text">ผิดด<br>เฟิร์สลืมวันครบรอบอะT_T<br></p>
+            <button class="incorrect-password-btn" onclick="goBackToPasswordPage()">กดรหัสใหม่</button>
+        </div>
+    </div>
+
+    <div id="page2" class="page">
+        <div class="content-wrapper-page2">
+            <div class="profile-pic">
+                <img src="คู่กันน.JPG" alt="รูปโปรไฟล์">
+            </div>
+            <p class="timer-title">สุขสันต์วันครบรอบ 14 เดือนน้าแฟนคนจ๋วยยย</p>
+            <div class="countdown">
+                <div class="time-block">
+                    <span id="days">0</span>
+                    <p>วัน</p>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-block">
+                    <span id="hours">0</span>
+                    <p>ชม.</p>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-block">
+                    <span id="minutes">0</span>
+                    <p>นาที</p>
+                </div>
+                <div class="separator">:</div>
+                <div class="time-block">
+                    <span id="seconds">0</span>
+                    <p>วินาที</p>
+                </div>
+            </div>
+            <div class="buttons-page2">
+                <button class="btn-page2 back-to-start-btn">เริ่มเล่นใหม่</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
