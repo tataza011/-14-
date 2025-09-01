@@ -165,3 +165,119 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
 });
+document.addEventListener('DOMContentLoaded', () => {
+    // ... (ส่วนประกาศตัวแปรเดิม) ...
+    const page3 = document.getElementById('page3');
+    const nextToVideoButton = document.querySelector('.next-to-video-btn');
+    const finalVideo = document.getElementById('finalVideo');
+
+    // ... (ส่วน Audio Object เดิม) ...
+    const backgroundMusicVideo = new Audio('bg_music_video.mp3'); // ถ้าต้องการเพลงใหม่สำหรับหน้าวิดีโอ
+    backgroundMusicVideo.loop = true;
+    backgroundMusicVideo.volume = 0.5;
+
+    // ... (ส่วน Event Listeners สำหรับปุ่มเดิม) ...
+
+    // เพิ่ม Event Listener สำหรับปุ่ม "ไปต่อ" ในหน้า 2
+    nextToVideoButton.addEventListener('click', () => {
+        // หยุดเพลงหน้านับเวลา
+        backgroundMusicCountdown.pause();
+        backgroundMusicCountdown.currentTime = 0;
+
+        page2.classList.remove('active');
+        page3.classList.add('active');
+        
+        // เริ่มเล่นวิดีโอโดยอัตโนมัติ
+        finalVideo.play().catch(e => console.error("Video playback failed:", e));
+
+        // ถ้าต้องการเพลงใหม่สำหรับหน้าวิดีโอ
+        // backgroundMusicVideo.play().catch(e => console.error("Video music failed:", e));
+    });
+
+    // แก้ไข Event Listener สำหรับปุ่ม "เริ่มใหม่" บนหน้า 3
+    document.querySelector('#page3 .back-to-start-btn').addEventListener('click', () => {
+        // หยุดวิดีโอ
+        finalVideo.pause();
+        finalVideo.currentTime = 0;
+
+        // ถ้ามีเพลงหน้าวิดีโอ ให้หยุดเพลงด้วย
+        // backgroundMusicVideo.pause();
+        // backgroundMusicVideo.currentTime = 0;
+
+        // กลับไปหน้าแรก
+        page3.classList.remove('active');
+        page0.classList.add('active');
+        
+        // กลับมาเล่นเพลงหน้าหลัก
+        backgroundMusicMain.play().catch(e => console.error("Failed to play main music:", e));
+    });
+
+    // ... (ส่วนโค้ดอื่นๆ ที่เหลือ) ...
+});
+// --- 5. การจัดการปุ่ม "ไปต่อ" และ "เริ่มใหม่" ในหน้าสุดท้าย ---
+    // --------------------------------------------------------------------------
+    // จัดการปุ่ม "ไปต่อ" ในหน้า 2
+    nextToVideoButton.addEventListener('click', () => {
+        backgroundMusicCountdown.pause();
+        backgroundMusicCountdown.currentTime = 0;
+
+        page2.classList.remove('active');
+        page3.classList.add('active');
+        
+        finalVideo.play().catch(e => console.error("Video playback failed:", e));
+    });
+
+    // จัดการปุ่ม "เริ่มใหม่" ในหน้า 2 (ย้อนกลับไปหน้าแรก)
+    backToStartButton.addEventListener('click', () => {
+        backgroundMusicCountdown.pause();
+        backgroundMusicCountdown.currentTime = 0;
+        
+        backgroundMusicMain.play().catch(e => console.error("Failed to play main music:", e));
+
+        page2.classList.remove('active');
+        page0.classList.add('active');
+        enteredPassword = '';
+        resultText.textContent = '';
+    });
+
+    // จัดการปุ่ม "ย้อนกลับไปหน้าแรก" ในหน้า 3
+    document.querySelector('#page3 .back-to-start-btn').addEventListener('click', () => {
+        finalVideo.pause();
+        finalVideo.currentTime = 0;
+
+        page3.classList.remove('active');
+        page0.classList.add('active');
+        
+        backgroundMusicMain.play().catch(e => console.error("Failed to play main music:", e));
+    });
+
+    // --------------------------------------------------------------------------
+    // --- 6. ฟังก์ชันนับถอยหลัง ---
+    // --------------------------------------------------------------------------
+    function startCountdown() {
+        const startDate = new Date('2024-07-02T16:13:00');
+        const daysEl = document.getElementById('days');
+        const hoursEl = document.getElementById('hours');
+        const minutesEl = document.getElementById('minutes');
+        const secondsEl = document.getElementById('seconds');
+
+        setInterval(() => {
+            const now = new Date();
+            const timeDifference = now - startDate;
+            if (timeDifference < 0) {
+                daysEl.textContent = '0';
+                hoursEl.textContent = '0';
+                minutesEl.textContent = '0';
+                secondsEl.textContent = '0';
+                return;
+            }
+            const totalSeconds = Math.floor(timeDifference / 1000);
+            const totalMinutes = Math.floor(totalSeconds / 60);
+            const totalHours = Math.floor(totalMinutes / 60);
+            const totalDays = Math.floor(totalHours / 24);
+            daysEl.textContent = totalDays;
+            hoursEl.textContent = totalHours % 24;
+            minutesEl.textContent = totalMinutes % 60;
+            secondsEl.textContent = totalSeconds % 60;
+        }, 1000);
+    }
