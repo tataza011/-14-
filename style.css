@@ -1,6 +1,4 @@
-/* ========================================================================= */
-/* --- Global Styles: สไตล์พื้นฐานของเว็บไซต์ --- */
-/* ========================================================================= */
+/* --- Global Styles --- */
 body {
     margin: 0;
     padding: 0;
@@ -8,15 +6,11 @@ body {
     background: linear-gradient(135deg, #ffe0f0 0%, #e0f7fa 100%);
     color: #5b4375;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
 }
 
 .page {
     display: none;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     justify-content: center;
     align-items: center;
@@ -24,37 +18,13 @@ body {
     text-align: center;
     box-sizing: border-box;
     padding: 20px;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 .page.active {
     display: flex;
 }
 
-.content-box {
-    background-color: rgba(255, 255, 255, 0.85);
-    border-radius: 25px;
-    padding: 50px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 90%;
-}
-
-button {
-    padding: 15px 25px;
-    font-size: 18px;
-    border-radius: 30px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: all 0.3s ease-in-out;
-}
-
-/* ========================================================================= */
 /* --- Page 0: Question Page (หน้าแรก) --- */
-/* ========================================================================= */
 #page0 {
     background: linear-gradient(135deg, #fce4ec 0%, #e0f2f7 100%);
 }
@@ -65,6 +35,12 @@ button {
     justify-content: center;
     align-items: center;
     gap: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    width: 90%;
 }
 
 .image-section-page0 img {
@@ -91,8 +67,15 @@ button {
 }
 
 .text-section-page0 button {
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
     background-color: #ffccbc;
     color: #880e4f;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
     width: 280px;
     text-align: left;
 }
@@ -111,9 +94,7 @@ button {
     min-height: 25px;
 }
 
-/* ========================================================================= */
 /* --- Page: Incorrect Answer (หน้าคำตอบผิด) --- */
-/* ========================================================================= */
 #page-incorrect {
     background: linear-gradient(135deg, #ffebee 0%, #fce4ec 100%);
 }
@@ -124,6 +105,12 @@ button {
     justify-content: center;
     align-items: center;
     gap: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
 }
 
 .incorrect-image-box img {
@@ -141,8 +128,15 @@ button {
 }
 
 .back-btn {
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
     background-color: #ffab91;
     color: #880e4f;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .back-btn:hover {
@@ -151,60 +145,7 @@ button {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* ========================================================================= */
-/* --- Page: Correct Answer (หน้าคำตอบที่ถูกต้อง) --- */
-/* ========================================================================= */
-#page-correct {
-    background: linear-gradient(135deg, #f8bbd0 0%, #e1bee7 100%);
-}
-
-.correct-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.correct-content img {
-    width: 200px;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
-}
-
-.correct-message {
-    font-size: 32px;
-    color: #d81b60;
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-    margin-bottom: 5px;
-}
-
-.sub-message {
-    font-size: 18px;
-    color: #880e4f;
-    font-weight: 300;
-}
-
-.next-btn {
-    padding: 15px 30px;
-    font-size: 20px;
-    background-color: #ffab91;
-    color: #880e4f;
-    margin-top: 20px;
-}
-
-.next-btn:hover {
-    background-color: #ff8a65;
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-}
-
-/* ========================================================================= */
 /* --- Page 1: Password Input (หน้าใส่รหัสผ่าน) --- */
-/* ========================================================================= */
 #page1 {
     background: linear-gradient(135deg, #f8bbd0 0%, #e1bee7 100%);
 }
@@ -213,6 +154,12 @@ button {
     display: flex;
     flex-direction: row;
     gap: 60px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    width: 90%;
 }
 
 .photo-grid {
@@ -277,11 +224,12 @@ button {
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     width: 250px;
+    /* จัดเรียงใหม่ให้ปุ่มลบอยู่ข้างปุ่ม 0 */
     grid-template-areas:
         "n1 n2 n3"
         "n4 n5 n6"
         "n7 n8 n9"
-        "s1 n0 s2";
+        "s1 n0 .";
 }
 
 .keypad button {
@@ -303,7 +251,7 @@ button {
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
-/* สไตล์สำหรับปุ่มที่กำหนดพื้นที่เอง */
+/* กำหนดตำแหน่งปุ่มใหม่ */
 .keypad button:nth-child(1) { grid-area: n1; }
 .keypad button:nth-child(2) { grid-area: n2; }
 .keypad button:nth-child(3) { grid-area: n3; }
@@ -313,9 +261,9 @@ button {
 .keypad button:nth-child(7) { grid-area: n7; }
 .keypad button:nth-child(8) { grid-area: n8; }
 .keypad button:nth-child(9) { grid-area: n9; }
-.keypad button:nth-child(10) { grid-area: s1; }
-.keypad button:nth-child(11) { grid-area: n0; }
-.keypad button:last-of-type { grid-area: s2; }
+.keypad button:nth-child(10) { grid-area: s1; } /* ปุ่มลบ */
+.keypad button:nth-child(11) { grid-area: n0; } /* ปุ่ม 0 */
+
 
 /* สไตล์สำหรับปุ่มลบตัวเลข */
 .keypad button.backspace-btn {
@@ -328,9 +276,69 @@ button {
 }
 
 
-/* ========================================================================= */
+/* --- Page: Correct Answer (หน้าคำตอบที่ถูกต้อง) --- */
+#page-correct {
+    background: linear-gradient(135deg, #f8bbd0 0%, #e1bee7 100%);
+}
+
+.correct-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 90%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.correct-content img {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.15));
+}
+
+.correct-message {
+    font-size: 32px;
+    color: #d81b60;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    margin-bottom: 5px;
+}
+
+.sub-message {
+    font-size: 18px;
+    color: #880e4f;
+    font-weight: 300;
+}
+
+.next-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    background-color: #ffab91;
+    color: #880e4f;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
+    margin-top: 20px;
+}
+
+.next-btn:hover {
+    background-color: #ff8a65;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+/* ... (ส่วนโค้ด CSS เดิม) ... */
+
 /* --- Page: Incorrect Password (หน้าใส่รหัสผ่านผิด) --- */
-/* ========================================================================= */
 #page-incorrect-password {
     background: linear-gradient(135deg, #bbdefb 0%, #e3f2fd 100%);
 }
@@ -341,6 +349,12 @@ button {
     justify-content: center;
     align-items: center;
     gap: 25px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
 }
 
 .incorrect-password-image {
@@ -360,8 +374,13 @@ button {
 .incorrect-password-btn {
     padding: 15px 30px;
     font-size: 18px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
     background-color: #ffab91;
     color: #880e4f;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
     margin-top: 10px;
 }
 
@@ -371,9 +390,10 @@ button {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-/* ========================================================================= */
 /* --- Page 2: Countdown Timer (หน้านับถอยหลัง) --- */
-/* ========================================================================= */
+/* ... (ส่วนโค้ด CSS เดิม) ... */
+
+/* --- Page 2: Countdown Timer (หน้านับถอยหลัง) --- */
 #page2 {
     background: linear-gradient(135deg, #e1bee7 0%, #bbdefb 100%);
 }
@@ -383,12 +403,18 @@ button {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    padding: 50px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 90%;
 }
 
 .profile-pic {
-    width: 250px;
-    height: 150px;
-    border-radius: 15px;
+    width: 250px; /* กำหนดความกว้างของสี่เหลี่ยมผืนผ้า */
+    height: 150px; /* กำหนดความสูงของสี่เหลี่ยมผืนผ้า */
+    border-radius: 15px; /* ทำให้มุมโค้งมนเล็กน้อย */
     border: 5px solid #ab47bc;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
@@ -397,7 +423,7 @@ button {
 .profile-pic img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; /* ทำให้รูปภาพครอบคลุมพื้นที่ */
 }
 
 .timer-title {
@@ -440,8 +466,15 @@ button {
 }
 
 .btn-page2 {
+    padding: 15px 30px;
+    font-size: 1.1rem;
     background-color: #ce93d8;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
     color: #4a148c;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease-in-out;
 }
 
 .btn-page2:hover {
@@ -454,7 +487,6 @@ button {
     background-color: #ffab91;
     color: #880e4f;
 }
-
 .back-to-start-btn:hover {
     background-color: #ff8a65;
 }
@@ -465,90 +497,234 @@ button {
     color: #a0a0a0;
     font-size: 0.9rem;
 }
+/* ... (ส่วนโค้ด CSS เดิมทั้งหมด) ... */
 
-/* ========================================================================= */
-/* --- Responsive Design (ปรับให้แสดงผลบนทุกหน้าจอ) --- */
-/* ========================================================================= */
+/* -------------------------------------------------------------------------- */
+/* --- Responsive Design for Mobile Devices (ปรับหน้าจอสำหรับมือถือ) --- */
+/* -------------------------------------------------------------------------- */
+
 @media (max-width: 600px) {
 
-    /* Page 0 */
+    /* --- Universal Adjustments --- */
+    body {
+        font-size: 14px;
+    }
+
+    .container-page0,
+    .incorrect-content,
+    .correct-content,
+    .content-wrapper-page1,
+    .password-incorrect-content,
+    .content-wrapper-page2 {
+        padding: 30px 20px;
+        width: 95%; /* เพิ่มความกว้างให้เต็มจอมากขึ้น */
+    }
+
+    /* --- Page 0: Question Page --- */
     .container-page0 {
         flex-direction: column;
         gap: 20px;
-        padding: 20px;
     }
+    
     .image-section-page0 img {
-        width: 120px;
-        height: 120px;
+        width: 150px; /* ปรับขนาดรูปภาพให้เล็กลง */
+        height: 150px;
     }
+
     .text-section-page0 h1 {
-        font-size: 20px;
-    }
-    .text-section-page0 button {
-        width: 100%;
+        font-size: 24px;
         text-align: center;
     }
 
-    /* Page 1 (เปลี่ยนเป็นแนวนอน) */
+    .text-section-page0 button {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    /* --- Page 1: Password Input Page --- */
     .content-wrapper-page1 {
-        flex-direction: row; /* เปลี่ยนเป็นแนวนอน */
-        flex-wrap: wrap; /* ให้ขึ้นบรรทัดใหม่เมื่อล้น */
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
         gap: 20px;
-        padding: 20px;
     }
+
     .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 5px;
-        padding: 5px;
+        grid-template-columns: repeat(2, 1fr); /* แสดงรูป 2 รูปต่อแถว */
     }
+
     .photo-grid img {
-        width: 80px; /* ลดขนาดรูปภาพเพื่อให้พอดี */
-        height: 80px;
+        width: 100%;
+        height: auto;
     }
+
     .password-section {
+        text-align: center;
         width: 100%;
     }
+
     .keypad {
-        width: 200px; /* ลดขนาดแป้นพิมพ์ */
-        gap: 8px;
-    }
-    .keypad button {
-        width: 50px;
-        height: 50px;
-        font-size: 16px;
-    }
-    #password-display {
-        font-size: 20px;
+        grid-template-columns: repeat(3, 1fr); /* คงขนาด Keypad ไว้ แต่ปรับให้พอดี */
     }
     
-    /* Page 2 */
-    .content-wrapper-page2 {
-        padding: 20px;
+    .password-prompt {
+        font-size: 1.2rem;
     }
-    .profile-pic {
-        width: 150px;
-        height: 90px;
-    }
-    .timer-title {
-        font-size: 18px;
-    }
-    .countdown {
-        font-size: 2.5rem;
-        gap: 5px;
-    }
-    .time-block p {
+    
+    .password-prompt span {
         font-size: 0.8rem;
     }
+    
+    /* --- Page 2: Countdown Timer Page --- */
+    .profile-pic {
+        width: 200px;
+        height: 120px;
+    }
+
+    .timer-title {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .countdown {
+        font-size: 3rem; /* ปรับขนาดตัวเลขให้นับถอยหลังเล็กลง */
+        gap: 10px;
+    }
+
+    .time-block p {
+        font-size: 1rem;
+    }
+
     .buttons-page2 {
         flex-direction: column;
         gap: 10px;
     }
+
     .btn-page2 {
-        width: 100%;
+        width: 100%; /* ให้ปุ่มเต็มความกว้าง */
+        font-size: 1rem;
+        padding: 12px 20px;
     }
-    .carrd-text {
-        font-size: 0.7rem;
+}
+/* ... (ส่วนโค้ด CSS เดิม) ... */
+
+/* --- Page 3: Video Page --- */
+#page3 {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.video-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.video-title {
+    font-size: 28px;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.responsive-video {
+    width: 100%;
+    max-width: 600px; /* จำกัดขนาดวิดีโอไม่ให้ใหญ่เกินไป */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-message {
+    font-size: 18px;
+    color: #3f51b5;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* เพิ่มสไตล์สำหรับปุ่ม "ไปต่อ" */
+.next-to-video-btn {
+    background-color: #c5e1a5;
+    color: #33691e;
+}
+.next-to-video-btn:hover {
+    background-color: #aed581;
+}
+
+/* ปรับปุ่ม "เริ่มใหม่" ในหน้าสุดท้ายให้กลับไปหน้าแรก */
+#page3 .back-to-start-btn {
+    margin-top: 20px;
+}
+
+/* ... (ส่วนโค้ด CSS เดิม) ... */
+
+@media (max-width: 600px) {
+    /* ... (โค้ด responsive เดิม) ... */
+
+    /* --- Page 3: Video Page --- */
+    .video-title {
+        font-size: 22px;
+    }
+    .video-message {
+        font-size: 16px;
+    }
+}
+/* ... (ส่วนโค้ด CSS เดิม) ... */
+
+/* --- Page 3: Video Page --- */
+#page3 {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+}
+
+.video-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.video-title {
+    font-size: 28px;
+    color: #1a237e;
+    font-weight: bold;
+}
+
+.responsive-video {
+    width: 100%;
+    max-width: 600px; /* จำกัดขนาดวิดีโอไม่ให้ใหญ่เกินไป */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-message {
+    font-size: 18px;
+    color: #3f51b5;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* เพิ่มสไตล์สำหรับปุ่ม "ไปต่อ" */
+.next-to-video-btn {
+    background-color: #c5e1a5;
+    color: #33691e;
+}
+.next-to-video-btn:hover {
+    background-color: #aed581;
+}
+
+/* ปรับปุ่ม "เริ่มใหม่" ในหน้าสุดท้ายให้กลับไปหน้าแรก */
+#page3 .back-to-start-btn {
+    margin-top: 20px;
+}
+
+/* ... (ส่วนโค้ด CSS เดิม) ... */
+
+@media (max-width: 600px) {
+    /* ... (โค้ด responsive เดิม) ... */
+
+    /* --- Page 3: Video Page --- */
+    .video-title {
+        font-size: 22px;
+    }
+    .video-message {
+        font-size: 16px;
     }
 }
